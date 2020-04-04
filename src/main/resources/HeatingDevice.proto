@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package HeatingDevice;
+
+option java_package = "HeatingDevice.proto.h";
+option java_multiple_files = true;
+option java_outer_classname = "ClassName";
+
+service HeaterService{
+rpc showStatus(HeaterStatusRequest) returns (HeaterStatusResponse) {};
+rpc setTempatureHigh(HeaterUpdateRequest) returns (HeaterDetailResponse) {};
+rpc setTempaturelow(HeaterUpdateRequest) returns (HeaterDetailResponse) {};
+rpc setExactTemp(exact_temp) returns (HeaterDetailResponse) {};
+rpc setOff(HeaterUpdateRequest) returns (HeaterDetailResponse) {};
+rpc setOn(HeaterUpdateRequest) returns (HeaterDetailResponse) {};
+}
+
+message Heater {
+ int32 heater_id = 1;
+ string device = 2;
+ string device_location = 3;
+ string status = 4;
+ int32 exactTemp = 5;
+
+}
+
+message HeaterStatusRequest {
+int32 heater_id = 1;
+}
+message exact_temp{
+int32 heater_id = 1;
+int32 exactTemp = 2;
+}
+
+message HeaterUpdateRequest {
+ int32 device_id = 1;
+
+}
+
+message HeaterStatusResponse {
+ Heater heater = 1;
+}
+
+message HeaterDetailResponse {
+ Heater heater = 1;
+}

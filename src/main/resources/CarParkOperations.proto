@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package CarParkOperations;
+
+option java_package = "CarParkOperations.proto.cp";
+option java_multiple_files = true;
+option java_outer_classname = "ClassName";
+
+service carParkService{
+rpc showStatus(carparkRequest) returns (carParkResponse) {};
+rpc setFull(CarParkToUpdateRequest) returns (carParkResponse){};
+rpc setSpaces(CarParkToUpdateRequest) returns (carParkResponse){};
+rpc allCarParks(allCarp) returns (stream carParkResponse){};
+}
+
+message CarPark{
+int32 carPark_id = 1;
+string status =2;
+string location =3;
+
+}
+
+message carparkRequest{
+int32 carPark_id = 1;
+}
+
+message CarParkToUpdateRequest {
+ int32 device_id = 1;
+}
+message allCarp{
+string status = 1;
+}
+
+
+message carParkResponse{
+CarPark carPark =1;
+}

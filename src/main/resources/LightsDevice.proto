@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package LightsDevice;
+
+option java_package = "LightsDevice.proto.li";
+option java_multiple_files = true;
+option java_outer_classname = "ClassName";
+
+service LightsService{
+
+rpc ShowStatus(light_status_request) returns (lightStatusResponse) {};
+rpc LightsOn(lightToUpdateRequest) returns (lightDetailResponse) {};
+rpc LightsOff(lightToUpdateRequest) returns (lightDetailResponse) {};
+}
+
+message Lights{
+int32 light_id =1;
+string light_location = 2;
+string light_status =3;
+}
+
+message light_status_request{
+int32 light_id =1;
+}
+
+message lightToUpdateRequest{
+int32 light_id =1;
+string request =2;
+}
+
+message lightStatusResponse{
+Lights lights =1;
+}
+
+message lightDetailResponse{
+Lights lights =1;
+}
