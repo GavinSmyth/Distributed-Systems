@@ -12,6 +12,7 @@ HeatingDevice\proto\h\HeaterClient$6.class
 HeatingDevice\proto\h\HeaterOrBuilder.class
 CarParkOperations\proto\cp\CarParkClient$2.class
 LightsDevice\proto\li\lightToUpdateRequest.class
+jmDNS\Discovery.class
 AircondioningDevice\proto\ac\Airconditioning_serviceGrpc$Airconditioning_serviceFutureStub.class
 LightsDevice\proto\li\Light.class
 HeatingDevice\proto\h\HeaterStatusResponse$Builder.class
@@ -31,7 +32,8 @@ AircondioningDevice\proto\ac\Airconditioning_serviceGrpc$Airconditioning_service
 TVDevice\proto\tv\TVStatusResponse.class
 HeatingDevice\proto\h\HeaterService$1.class
 HeatingDevice\proto\h\HeaterClient$7.class
-AircondioningDevice\proto\ac\Response$1.class
+TVDevice\proto\tv\TVService$1.class
+TVDevice\proto\tv\TVClient$5.class
 TVDevice\proto\tv\TVServiceGrpc$TVServiceBlockingStub.class
 CarParkOperations\proto\cp\CarParkToUpdateRequest$1.class
 LightsDevice\proto\li\lightStatusResponse$1.class
@@ -44,8 +46,8 @@ HeatingDevice\proto\h\HeaterClient.class
 net\codeJava\swing\ConnectionBuilder.class
 net\codeJava\swing\login1$3.class
 LightsDevice\proto\li\LightsServiceGrpc$LightsServiceBaseDescriptorSupplier.class
-AircondioningDevice\proto\ac\ACService.class
 TVDevice\proto\tv\exact_update$1.class
+TVDevice\proto\tv\TVClient.class
 CarParkOperations\proto\cp\allCarpOrBuilder.class
 HeatingDevice\proto\h\HeaterStatusResponseOrBuilder.class
 CarParkOperations\proto\cp\carParkResponse$Builder.class
@@ -60,7 +62,7 @@ HeatingDevice\proto\h\HeaterStatusRequestOrBuilder.class
 HeatingDevice\proto\h\HeaterStatusRequest$1.class
 LightsDevice\proto\li\LightsServiceGrpc$MethodHandlers.class
 LightsDevice\proto\li\light_status_request.class
-AircondioningDevice\proto\ac\Response.class
+TVDevice\proto\tv\TVClient$4.class
 CarParkOperations\proto\cp\CarParkService.class
 TVDevice\proto\tv\TVStatusResponseOrBuilder.class
 AircondioningDevice\proto\ac\ClassName$1.class
@@ -76,15 +78,18 @@ LightsDevice\proto\li\LightsServiceGrpc$LightsServiceImplBase.class
 net\codeJava\swing\login1.class
 AircondioningDevice\proto\ac\deviceIDRequest$Builder.class
 CarParkOperations\proto\cp\carParkServiceGrpc$carParkServiceBlockingStub.class
+TVDevice\proto\tv\TVClient$1.class
 AircondioningDevice\proto\ac\Air.class
 AircondioningDevice\proto\ac\Airconditioning_serviceGrpc$Airconditioning_serviceImplBase.class
 TVDevice\proto\tv\exact_update.class
 LightsDevice\proto\li\lightStatusResponseOrBuilder.class
+TVDevice\proto\tv\TVService.class
 AircondioningDevice\proto\ac\AirConditioning$Builder.class
 HeatingDevice\proto\h\HeaterStatusResponse.class
 CarParkOperations\proto\cp\CarParkToUpdateRequest$Builder.class
 HeatingDevice\proto\h\exact_tempOrBuilder.class
 LightsDevice\proto\li\LightsOrBuilder.class
+TVDevice\proto\tv\TVClient$2.class
 models\java\TV.class
 CarParkOperations\proto\cp\carparkRequestOrBuilder.class
 CarParkOperations\proto\cp\carParkServiceGrpc$carParkServiceMethodDescriptorSupplier.class
@@ -114,11 +119,13 @@ CarParkOperations\proto\cp\carparkRequest$1.class
 net\codeJava\swing\smartHotelUI$1.class
 CarParkOperations\proto\cp\CarParkClient$3.class
 AircondioningDevice\proto\ac\deviceIDRequestOrBuilder.class
+TVDevice\proto\tv\TVClient$3.class
 CarParkOperations\proto\cp\allCarp$Builder.class
 TVDevice\proto\tv\TV$1.class
 CarParkOperations\proto\cp\carParkResponse$1.class
 CarParkOperations\proto\cp\CarParkToUpdateRequestOrBuilder.class
 HeatingDevice\proto\h\HeaterServiceGrpc$HeaterServiceStub.class
+TVDevice\proto\tv\tvdata.class
 TVDevice\proto\tv\TVDetailResponse.class
 HeatingDevice\proto\h\HeaterDetailResponseOrBuilder.class
 LightsDevice\proto\li\lightClient$2.class
@@ -140,6 +147,7 @@ TVDevice\proto\tv\update_request.class
 LightsDevice\proto\li\LightsServer$1.class
 CarParkOperations\proto\cp\ClassName$1.class
 HeatingDevice\proto\h\HeaterStatusResponse$1.class
+AircondioningDevice\proto\ac\AirConClient$5.class
 TVDevice\proto\tv\TVServiceGrpc.class
 LightsDevice\proto\li\LightsServiceGrpc$LightsServiceMethodDescriptorSupplier.class
 TVDevice\proto\tv\TVStatusRequestOrBuilder.class
@@ -208,7 +216,6 @@ TVDevice\proto\tv\update_requestOrBuilder.class
 CarParkOperations\proto\cp\CarPark.class
 HeatingDevice\proto\h\HeaterStatusRequest$Builder.class
 TVDevice\proto\tv\TV.class
-AircondioningDevice\proto\ac\Response$Builder.class
 net\codeJava\swing\register$3.class
 CarParkOperations\proto\cp\Car.class
 LightsDevice\proto\li\lightClient$3.class

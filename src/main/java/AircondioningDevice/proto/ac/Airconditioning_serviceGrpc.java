@@ -92,21 +92,21 @@ public final class Airconditioning_serviceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<AircondioningDevice.proto.ac.deviceIDRequest,
-      AircondioningDevice.proto.ac.Response> getSetOffMethod;
+      AircondioningDevice.proto.ac.ACResponse> getSetOffMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "setOff",
       requestType = AircondioningDevice.proto.ac.deviceIDRequest.class,
-      responseType = AircondioningDevice.proto.ac.Response.class,
+      responseType = AircondioningDevice.proto.ac.ACResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<AircondioningDevice.proto.ac.deviceIDRequest,
-      AircondioningDevice.proto.ac.Response> getSetOffMethod() {
-    io.grpc.MethodDescriptor<AircondioningDevice.proto.ac.deviceIDRequest, AircondioningDevice.proto.ac.Response> getSetOffMethod;
+      AircondioningDevice.proto.ac.ACResponse> getSetOffMethod() {
+    io.grpc.MethodDescriptor<AircondioningDevice.proto.ac.deviceIDRequest, AircondioningDevice.proto.ac.ACResponse> getSetOffMethod;
     if ((getSetOffMethod = Airconditioning_serviceGrpc.getSetOffMethod) == null) {
       synchronized (Airconditioning_serviceGrpc.class) {
         if ((getSetOffMethod = Airconditioning_serviceGrpc.getSetOffMethod) == null) {
           Airconditioning_serviceGrpc.getSetOffMethod = getSetOffMethod = 
-              io.grpc.MethodDescriptor.<AircondioningDevice.proto.ac.deviceIDRequest, AircondioningDevice.proto.ac.Response>newBuilder()
+              io.grpc.MethodDescriptor.<AircondioningDevice.proto.ac.deviceIDRequest, AircondioningDevice.proto.ac.ACResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "AirConditioningDevice.Airconditioning_service", "setOff"))
@@ -114,13 +114,45 @@ public final class Airconditioning_serviceGrpc {
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   AircondioningDevice.proto.ac.deviceIDRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  AircondioningDevice.proto.ac.Response.getDefaultInstance()))
+                  AircondioningDevice.proto.ac.ACResponse.getDefaultInstance()))
                   .setSchemaDescriptor(new Airconditioning_serviceMethodDescriptorSupplier("setOff"))
                   .build();
           }
         }
      }
      return getSetOffMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<AircondioningDevice.proto.ac.deviceIDRequest,
+      AircondioningDevice.proto.ac.ACResponse> getSetOnMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "setOn",
+      requestType = AircondioningDevice.proto.ac.deviceIDRequest.class,
+      responseType = AircondioningDevice.proto.ac.ACResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<AircondioningDevice.proto.ac.deviceIDRequest,
+      AircondioningDevice.proto.ac.ACResponse> getSetOnMethod() {
+    io.grpc.MethodDescriptor<AircondioningDevice.proto.ac.deviceIDRequest, AircondioningDevice.proto.ac.ACResponse> getSetOnMethod;
+    if ((getSetOnMethod = Airconditioning_serviceGrpc.getSetOnMethod) == null) {
+      synchronized (Airconditioning_serviceGrpc.class) {
+        if ((getSetOnMethod = Airconditioning_serviceGrpc.getSetOnMethod) == null) {
+          Airconditioning_serviceGrpc.getSetOnMethod = getSetOnMethod = 
+              io.grpc.MethodDescriptor.<AircondioningDevice.proto.ac.deviceIDRequest, AircondioningDevice.proto.ac.ACResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "AirConditioningDevice.Airconditioning_service", "setOn"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  AircondioningDevice.proto.ac.deviceIDRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  AircondioningDevice.proto.ac.ACResponse.getDefaultInstance()))
+                  .setSchemaDescriptor(new Airconditioning_serviceMethodDescriptorSupplier("setOn"))
+                  .build();
+          }
+        }
+     }
+     return getSetOnMethod;
   }
 
   /**
@@ -167,8 +199,15 @@ public final class Airconditioning_serviceGrpc {
     /**
      */
     public void setOff(AircondioningDevice.proto.ac.deviceIDRequest request,
-        io.grpc.stub.StreamObserver<AircondioningDevice.proto.ac.Response> responseObserver) {
+        io.grpc.stub.StreamObserver<AircondioningDevice.proto.ac.ACResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getSetOffMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void setOn(AircondioningDevice.proto.ac.deviceIDRequest request,
+        io.grpc.stub.StreamObserver<AircondioningDevice.proto.ac.ACResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getSetOnMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -192,8 +231,15 @@ public final class Airconditioning_serviceGrpc {
             asyncUnaryCall(
               new MethodHandlers<
                 AircondioningDevice.proto.ac.deviceIDRequest,
-                AircondioningDevice.proto.ac.Response>(
+                AircondioningDevice.proto.ac.ACResponse>(
                   this, METHODID_SET_OFF)))
+          .addMethod(
+            getSetOnMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                AircondioningDevice.proto.ac.deviceIDRequest,
+                AircondioningDevice.proto.ac.ACResponse>(
+                  this, METHODID_SET_ON)))
           .build();
     }
   }
@@ -235,9 +281,17 @@ public final class Airconditioning_serviceGrpc {
     /**
      */
     public void setOff(AircondioningDevice.proto.ac.deviceIDRequest request,
-        io.grpc.stub.StreamObserver<AircondioningDevice.proto.ac.Response> responseObserver) {
+        io.grpc.stub.StreamObserver<AircondioningDevice.proto.ac.ACResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getSetOffMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void setOn(AircondioningDevice.proto.ac.deviceIDRequest request,
+        io.grpc.stub.StreamObserver<AircondioningDevice.proto.ac.ACResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getSetOnMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -275,9 +329,16 @@ public final class Airconditioning_serviceGrpc {
 
     /**
      */
-    public AircondioningDevice.proto.ac.Response setOff(AircondioningDevice.proto.ac.deviceIDRequest request) {
+    public AircondioningDevice.proto.ac.ACResponse setOff(AircondioningDevice.proto.ac.deviceIDRequest request) {
       return blockingUnaryCall(
           getChannel(), getSetOffMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public AircondioningDevice.proto.ac.ACResponse setOn(AircondioningDevice.proto.ac.deviceIDRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getSetOnMethod(), getCallOptions(), request);
     }
   }
 
@@ -317,16 +378,25 @@ public final class Airconditioning_serviceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<AircondioningDevice.proto.ac.Response> setOff(
+    public com.google.common.util.concurrent.ListenableFuture<AircondioningDevice.proto.ac.ACResponse> setOff(
         AircondioningDevice.proto.ac.deviceIDRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getSetOffMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<AircondioningDevice.proto.ac.ACResponse> setOn(
+        AircondioningDevice.proto.ac.deviceIDRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getSetOnMethod(), getCallOptions()), request);
     }
   }
 
   private static final int METHODID_CURRENT_DETAILS = 0;
   private static final int METHODID_SET_TEMP = 1;
   private static final int METHODID_SET_OFF = 2;
+  private static final int METHODID_SET_ON = 3;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -355,7 +425,11 @@ public final class Airconditioning_serviceGrpc {
           break;
         case METHODID_SET_OFF:
           serviceImpl.setOff((AircondioningDevice.proto.ac.deviceIDRequest) request,
-              (io.grpc.stub.StreamObserver<AircondioningDevice.proto.ac.Response>) responseObserver);
+              (io.grpc.stub.StreamObserver<AircondioningDevice.proto.ac.ACResponse>) responseObserver);
+          break;
+        case METHODID_SET_ON:
+          serviceImpl.setOn((AircondioningDevice.proto.ac.deviceIDRequest) request,
+              (io.grpc.stub.StreamObserver<AircondioningDevice.proto.ac.ACResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -421,6 +495,7 @@ public final class Airconditioning_serviceGrpc {
               .addMethod(getCurrentDetailsMethod())
               .addMethod(getSetTempMethod())
               .addMethod(getSetOffMethod())
+              .addMethod(getSetOnMethod())
               .build();
         }
       }

@@ -25,11 +25,6 @@ public final class ClassName {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_AirConditioningDevice_deviceIDRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_AirConditioningDevice_Response_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_AirConditioningDevice_Response_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_AirConditioningDevice_TempRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -52,20 +47,22 @@ public final class ClassName {
       "ioningDevice\"i\n\017AirConditioning\022\020\n\010devic" +
       "eId\030\001 \001(\005\022\014\n\004name\030\002 \001(\t\022\020\n\010location\030\003 \001(" +
       "\t\022\016\n\006status\030\004 \001(\t\022\024\n\014newTempature\030\005 \001(\005\"" +
-      "$\n\017deviceIDRequest\022\021\n\tdevice_id\030\001 \001(\005\"\034\n" +
-      "\010Response\022\020\n\010response\030\001 \001(\t\"2\n\013TempReque" +
-      "st\022\021\n\tdevice_id\030\001 \001(\005\022\020\n\010new_temp\030\002 \001(\005\"" +
-      "M\n\nACResponse\022?\n\017airConditioning\030\001 \001(\0132&" +
-      ".AirConditioningDevice.AirConditioning2\241" +
-      "\002\n\027Airconditioning_service\022]\n\016currentDet" +
-      "ails\022&.AirConditioningDevice.deviceIDReq" +
-      "uest\032!.AirConditioningDevice.ACResponse\"" +
-      "\000\022R\n\007setTemp\022\".AirConditioningDevice.Tem" +
-      "pRequest\032!.AirConditioningDevice.ACRespo" +
-      "nse\"\000\022S\n\006setOff\022&.AirConditioningDevice." +
-      "deviceIDRequest\032\037.AirConditioningDevice." +
-      "Response\"\000B+\n\034AircondioningDevice.proto." +
-      "acB\tClassNameP\001b\006proto3"
+      "$\n\017deviceIDRequest\022\021\n\tdevice_id\030\001 \001(\005\"2\n" +
+      "\013TempRequest\022\021\n\tdevice_id\030\001 \001(\005\022\020\n\010new_t" +
+      "emp\030\002 \001(\005\"M\n\nACResponse\022?\n\017airConditioni" +
+      "ng\030\001 \001(\0132&.AirConditioningDevice.AirCond" +
+      "itioning2\371\002\n\027Airconditioning_service\022]\n\016" +
+      "currentDetails\022&.AirConditioningDevice.d" +
+      "eviceIDRequest\032!.AirConditioningDevice.A" +
+      "CResponse\"\000\022R\n\007setTemp\022\".AirConditioning" +
+      "Device.TempRequest\032!.AirConditioningDevi" +
+      "ce.ACResponse\"\000\022U\n\006setOff\022&.AirCondition" +
+      "ingDevice.deviceIDRequest\032!.AirCondition" +
+      "ingDevice.ACResponse\"\000\022T\n\005setOn\022&.AirCon" +
+      "ditioningDevice.deviceIDRequest\032!.AirCon" +
+      "ditioningDevice.ACResponse\"\000B+\n\034Aircondi" +
+      "oningDevice.proto.acB\tClassNameP\001b\006proto" +
+      "3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -91,20 +88,14 @@ public final class ClassName {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_AirConditioningDevice_deviceIDRequest_descriptor,
         new java.lang.String[] { "DeviceId", });
-    internal_static_AirConditioningDevice_Response_descriptor =
-      getDescriptor().getMessageTypes().get(2);
-    internal_static_AirConditioningDevice_Response_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_AirConditioningDevice_Response_descriptor,
-        new java.lang.String[] { "Response", });
     internal_static_AirConditioningDevice_TempRequest_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(2);
     internal_static_AirConditioningDevice_TempRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_AirConditioningDevice_TempRequest_descriptor,
         new java.lang.String[] { "DeviceId", "NewTemp", });
     internal_static_AirConditioningDevice_ACResponse_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_AirConditioningDevice_ACResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_AirConditioningDevice_ACResponse_descriptor,

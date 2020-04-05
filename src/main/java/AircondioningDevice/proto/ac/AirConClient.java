@@ -50,6 +50,10 @@ public class AirConClient extends JFrame {
 	  private JTextField tempID;
 	  private JTextField Tempnew;
 	  JTextArea statusResponse = new JTextArea();
+	  JTextArea OnOffResponse = new JTextArea();
+	  JTextArea tempResponse = new JTextArea();
+	  JTextArea OnArea = new JTextArea();
+	  private JTextField onFeild;
 	  
 		
 	  
@@ -67,7 +71,7 @@ public class AirConClient extends JFrame {
 		   
 		    
 			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			setBounds(100, 100, 578, 536);
+			setBounds(100, 100, 605, 584);
 			contentPane = new JPanel();
 			contentPane.setBackground(new Color(100, 149, 237));
 			contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -89,14 +93,14 @@ public class AirConClient extends JFrame {
 			lblNewLabel_1.setForeground(new Color(255, 255, 255));
 			lblNewLabel_1.setFont(new Font("Times New Roman", Font.BOLD, 14));
 			lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-			lblNewLabel_1.setBounds(67, 171, 114, 14);
+			lblNewLabel_1.setBounds(69, 171, 114, 14);
 			contentPane.add(lblNewLabel_1);
 			
 			
 			statusResponse.setBounds(56, 243, 157, 79);
 			contentPane.add(statusResponse);
 			
-			JLabel lblNewLabel_1_1 = new JLabel("Turn On/Off");
+			JLabel lblNewLabel_1_1 = new JLabel("Turn Off");
 			lblNewLabel_1_1.setHorizontalAlignment(SwingConstants.CENTER);
 			lblNewLabel_1_1.setForeground(Color.WHITE);
 			lblNewLabel_1_1.setFont(new Font("Times New Roman", Font.BOLD, 14));
@@ -108,7 +112,7 @@ public class AirConClient extends JFrame {
 			contentPane.add(turnID);
 			turnID.setColumns(10);
 			
-			JTextArea OnOffResponse = new JTextArea();
+			
 			OnOffResponse.setBounds(334, 243, 157, 79);
 			contentPane.add(OnOffResponse);
 			
@@ -116,21 +120,21 @@ public class AirConClient extends JFrame {
 			lblNewLabel_1_2.setHorizontalAlignment(SwingConstants.CENTER);
 			lblNewLabel_1_2.setForeground(Color.WHITE);
 			lblNewLabel_1_2.setFont(new Font("Times New Roman", Font.BOLD, 14));
-			lblNewLabel_1_2.setBounds(218, 356, 114, 14);
+			lblNewLabel_1_2.setBounds(69, 367, 114, 14);
 			contentPane.add(lblNewLabel_1_2);
 			
 			tempID = new JTextField();
-			tempID.setBounds(153, 381, 86, 20);
+			tempID.setBounds(10, 391, 86, 20);
 			contentPane.add(tempID);
 			tempID.setColumns(10);
 			
 			Tempnew = new JTextField();
 			Tempnew.setColumns(10);
-			Tempnew.setBounds(307, 381, 86, 20);
+			Tempnew.setBounds(139, 391, 86, 20);
 			contentPane.add(Tempnew);
 			
-			JTextArea tempResponse = new JTextArea();
-			tempResponse.setBounds(201, 412, 157, 79);
+			
+			tempResponse.setBounds(35, 422, 157, 79);
 			contentPane.add(tempResponse);
 			
 			JButton getStatus = new JButton("Get Status");
@@ -144,7 +148,7 @@ public class AirConClient extends JFrame {
 			getStatus.setBounds(86, 333, 89, 23);
 			contentPane.add(getStatus);
 			
-			JButton turnBtn = new JButton("Turn Off/On");
+			JButton turnBtn = new JButton("Turn Off");
 			turnBtn.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					 int id = Integer.parseInt(turnID.getText());
@@ -162,8 +166,34 @@ public class AirConClient extends JFrame {
 					setTemp(id, newTemp);
 				}
 			});
-			setTempBtn.setBounds(370, 444, 89, 23);
+			setTempBtn.setBounds(60, 511, 89, 23);
 			contentPane.add(setTempBtn);
+			
+			JLabel lblNewLabel_1_2_1 = new JLabel("Turn On");
+			lblNewLabel_1_2_1.setHorizontalAlignment(SwingConstants.CENTER);
+			lblNewLabel_1_2_1.setForeground(Color.WHITE);
+			lblNewLabel_1_2_1.setFont(new Font("Times New Roman", Font.BOLD, 14));
+			lblNewLabel_1_2_1.setBounds(356, 368, 114, 14);
+			contentPane.add(lblNewLabel_1_2_1);
+			
+			onFeild = new JTextField();
+			onFeild.setBounds(373, 393, 86, 20);
+			contentPane.add(onFeild);
+			onFeild.setColumns(10);
+			
+			
+			OnArea.setBounds(331, 422, 157, 79);
+			contentPane.add(OnArea);
+			
+			JButton btnTurnOff = new JButton("Turn On");
+			btnTurnOff.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					int id = Integer.parseInt(onFeild.getText());
+					setOn(id);
+				}
+			});
+			btnTurnOff.setBounds(370, 511, 89, 23);
+			contentPane.add(btnTurnOff);
 			
 		  }
 	  public static void main(String[] args) {
@@ -229,8 +259,8 @@ public class AirConClient extends JFrame {
 				 logger.log(Level.WARNING, "RPC failed: {0}", e.getStatus());
 			      return;
 			 }
-			  logger.info("Device: " + response.getAirConditioning ());
-			
+			  logger.info("Device: " + response.getAirConditioning());
+			  tempResponse.append(response.getAirConditioning().toString());
 		 }
 		 public void setOff(int id) {
 			  channel =ManagedChannelBuilder.forAddress("localhost", 3000)
@@ -242,7 +272,7 @@ public class AirConClient extends JFrame {
 			    asyncStub = Airconditioning_serviceGrpc.newStub(channel);
 			 logger.info("Will try switch off device" + id + " ...");
 			 deviceIDRequest deviceid = deviceIDRequest.newBuilder().setDeviceId(id).build();
-			 Response response;
+			 ACResponse response;
 			 try {
 				 response =blockingStub.setOff(deviceid);
 				 
@@ -250,10 +280,31 @@ public class AirConClient extends JFrame {
 				 logger.log(Level.WARNING, "RPC failed: {0}", e.getStatus());
 			      return;
 			 }
-			 logger.info("Device: " + response.getResponse());
+			 logger.info("Device: " + response.getAirConditioning());
+			 OnOffResponse.append(response.getAirConditioning().toString());
 			 
 		 }
+		 public void setOn(int id) {
+			  channel =ManagedChannelBuilder.forAddress("localhost", 3000)
+				        // Channels are secure by default (via SSL/TLS). For the example we disable TLS to avoid
+				        // needing certificates.
+				        .usePlaintext()
+				        .build();
+			  blockingStub = Airconditioning_serviceGrpc.newBlockingStub(channel);
+			    asyncStub = Airconditioning_serviceGrpc.newStub(channel);
+			 logger.info("Will try switch off device" + id + " ...");
+			 deviceIDRequest deviceid = deviceIDRequest.newBuilder().setDeviceId(id).build();
+			 ACResponse response;
+			 try {
+				 response =blockingStub.setOn(deviceid);
+				 
+			 }catch(StatusRuntimeException e) {
+				 logger.log(Level.WARNING, "RPC failed: {0}", e.getStatus());
+			      return;
+			 }
+			 logger.info("Device: " + response.getAirConditioning());
+			 OnArea.append(response.getAirConditioning().toString());
 
-	
-	
+			 
+		 }
 }

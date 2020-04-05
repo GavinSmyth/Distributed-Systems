@@ -168,7 +168,7 @@ public class lightClient extends JFrame {
 	}
 	
 	public void showStatus(int id) {
-		 channel =ManagedChannelBuilder.forAddress("localhost", 3000)
+		 channel =ManagedChannelBuilder.forAddress("localhost", 50055)
 			        // Channels are secure by default (via SSL/TLS). For the example we disable TLS to avoid
 			        // needing certificates.
 			        .usePlaintext()
@@ -190,7 +190,7 @@ public class lightClient extends JFrame {
 		
 	}
 	public void lightsOn(int id) {
-		 channel =ManagedChannelBuilder.forAddress("localhost", 3000)
+		 channel =ManagedChannelBuilder.forAddress("localhost", 50055)
 			        // Channels are secure by default (via SSL/TLS). For the example we disable TLS to avoid
 			        // needing certificates.
 			        .usePlaintext()
@@ -211,7 +211,7 @@ public class lightClient extends JFrame {
 		    OnArea.append(response.getLights().toString());
 	}
 	public void lightsOff(int id) {
-		 channel =ManagedChannelBuilder.forAddress("localhost", 3000)
+		 channel =ManagedChannelBuilder.forAddress("localhost", 50055)
 			        // Channels are secure by default (via SSL/TLS). For the example we disable TLS to avoid
 			        // needing certificates.
 			        .usePlaintext()

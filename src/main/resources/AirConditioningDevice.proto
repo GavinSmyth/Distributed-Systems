@@ -10,7 +10,8 @@ option java_outer_classname = "ClassName";
 service Airconditioning_service{
 rpc currentDetails(deviceIDRequest) returns (ACResponse) {};
 rpc setTemp(TempRequest ) returns (ACResponse) {};
-rpc setOff(deviceIDRequest) returns (Response) {};
+rpc setOff(deviceIDRequest) returns (ACResponse) {};
+rpc setOn(deviceIDRequest) returns (ACResponse) {};
 
 
 
@@ -28,10 +29,7 @@ message deviceIDRequest{
 int32 device_id =1;
 
 }
-message Response{
-string response = 1;
 
-}
 
 message TempRequest {
     int32 device_id = 1;
