@@ -257,7 +257,7 @@ public class HeaterClient extends JFrame {
 		    channel.shutdown().awaitTermination(5, TimeUnit.SECONDS);
 	 }
 	public void showStatus(int id) {
-		 channel =ManagedChannelBuilder.forAddress("localhost", 3000)
+		 channel =ManagedChannelBuilder.forAddress("localhost", 50055)
 			        // Channels are secure by default (via SSL/TLS). For the example we disable TLS to avoid
 			        // needing certificates.
 			        .usePlaintext()
@@ -279,7 +279,7 @@ public class HeaterClient extends JFrame {
 		
 	}
 	public void setTempatureHigh(int id) {
-		 channel =ManagedChannelBuilder.forAddress("localhost", 3000)
+		 channel =ManagedChannelBuilder.forAddress("localhost", 50055)
 			        // Channels are secure by default (via SSL/TLS). For the example we disable TLS to avoid
 			        // needing certificates.
 			        .usePlaintext()
@@ -303,7 +303,7 @@ public class HeaterClient extends JFrame {
 		
 	}
 	public void setTempaturelow(int id) {
-		 channel =ManagedChannelBuilder.forAddress("localhost", 3000)
+		 channel =ManagedChannelBuilder.forAddress("localhost", 50055)
 			        // Channels are secure by default (via SSL/TLS). For the example we disable TLS to avoid
 			        // needing certificates.
 			        .usePlaintext()
@@ -327,7 +327,7 @@ public class HeaterClient extends JFrame {
 		
 	}
 	public void setOff(int id) {
-		 channel =ManagedChannelBuilder.forAddress("localhost", 3000)
+		 channel =ManagedChannelBuilder.forAddress("localhost", 50055)
 			        // Channels are secure by default (via SSL/TLS). For the example we disable TLS to avoid
 			        // needing certificates.
 			        .usePlaintext()
@@ -351,7 +351,7 @@ public class HeaterClient extends JFrame {
 		
 	}
 	public void setOn(int id) {
-		 channel =ManagedChannelBuilder.forAddress("localhost", 3000)
+		 channel =ManagedChannelBuilder.forAddress("localhost", 50055)
 			        // Channels are secure by default (via SSL/TLS). For the example we disable TLS to avoid
 			        // needing certificates.
 			        .usePlaintext()
@@ -375,7 +375,7 @@ public class HeaterClient extends JFrame {
 		
 	}
 	public void setExactTemp(int id, int exact) {
-		channel =ManagedChannelBuilder.forAddress("localhost", 3000)
+		channel =ManagedChannelBuilder.forAddress("localhost", 50055)
 		        // Channels are secure by default (via SSL/TLS). For the example we disable TLS to avoid
 		        // needing certificates.
 		        .usePlaintext()

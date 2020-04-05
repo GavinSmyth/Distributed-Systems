@@ -65,14 +65,7 @@ public class LightsServer extends LightsServiceImplBase{
 			}
 			}
 
-		  /**
-		   * Await termination on the main thread since the grpc library uses daemon threads.
-		   */
-		
-
-		  /**
-		   * Main launches the server from the command line.
-		   */
+		 
 		  public static void main(String[] args) throws IOException, InterruptedException {
 			  try {
 		           // Create a JmDNS instance

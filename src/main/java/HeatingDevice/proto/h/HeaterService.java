@@ -1,8 +1,14 @@
 package HeatingDevice.proto.h;
 
 import java.io.IOException;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.logging.Logger;
+
+import javax.jmdns.JmDNS;
+import javax.jmdns.ServiceEvent;
+import javax.jmdns.ServiceListener;
 
 import org.checkerframework.checker.units.qual.h;
 
@@ -16,6 +22,7 @@ import HeatingDevice.proto.h.HeaterServiceGrpc;
 
 
 import HeatingDevice.proto.h.HeaterServiceGrpc.HeaterServiceImplBase;
+
 import TVDevice.proto.tv.TVDetailResponse;
 import TVDevice.proto.tv.exact_update;
 import TVDevice.proto.tv.tvdata;
@@ -28,53 +35,65 @@ public class HeaterService extends HeaterServiceImplBase{
 	private static final Logger logger = Logger.getLogger(HeaterService.class.getName());
 	
 	
-	
-	 private Server server;
-	 
-	 private void start() throws IOException {
-		    /* The port on which the server should run */
-		    int port = 3000;
-		    
-		    server = ServerBuilder.forPort(port)
-		        .addService(new HeaterService())
-		        .build()
-		        .start();
-		    
-		    logger.info("Server started, listening on " + port);
-		    
-		    Runtime.getRuntime().addShutdownHook(new Thread() {
-		      @Override
-		      public void run() {
-		        System.err.println("*** shutting down gRPC server since JVM is shutting down");
-		        HeaterService.this.stop();
-		        System.err.println("*** server shut down");
-		      }
-		    });
-		  }
+	 private static class SampleListener implements ServiceListener {
+	       public void serviceAdded(ServiceEvent event) {
+	           System.out.println( event.getInfo().getPort());
 
-		  private void stop() {
-		    if (server != null) {
-		      server.shutdown();
-		    }
-		  }
+	       }
 
-		  /**
-		   * Await termination on the main thread since the grpc library uses daemon threads.
-		   */
-		  private void blockUntilShutdown() throws InterruptedException {
-		    if (server != null) {
-		      server.awaitTermination();
-		    }
-		  }
 
-		  /**
-		   * Main launches the server from the command line.
-		   */
-		  public static void main(String[] args) throws IOException, InterruptedException {
-		    final HeaterService server = new HeaterService();
-		    server.start();
-		    server.blockUntilShutdown();
-		  }	
+	       public void serviceRemoved(ServiceEvent event) {
+	           System.out.println("resolved " +event.getInfo());
+	       }
+
+
+	       public void serviceResolved(ServiceEvent event) {
+	           System.out.println("resolved: " + event.getInfo());
+	         
+	      try {
+	    	  HeaterService heaterService = new HeaterService();
+	     
+	       int port = event.getInfo().getPort();
+	       
+
+	    // portNumber= 50055;
+	       Server server = ServerBuilder.forPort(port)
+	           .addService(heaterService)
+	           .build()
+	           .start();
+
+	       logger.info("Lighting Server started, listening on " + port);
+	     
+
+	       server.awaitTermination();
+	   
+	} catch (IOException e) {
+	// TODO Auto-generated catch block
+	e.printStackTrace();
+	} catch (InterruptedException e) {
+	// TODO Auto-generated catch block
+	e.printStackTrace();
+	}
+	}
+	       public static void main(String[] args) throws IOException, InterruptedException {
+				  try {
+			           // Create a JmDNS instance
+			           JmDNS jmdns = JmDNS.create(InetAddress.getLocalHost());
+
+
+			           // Add a service listener
+			           jmdns.addServiceListener("_http._tcp.local.", new SampleListener());
+			           System.out.println("Listening");
+			           // Wait a bit
+			           Thread.sleep(30000);
+			       } catch (UnknownHostException e) {
+			           System.out.println(e.getMessage());
+			       } catch (IOException e) {
+			           System.out.println(e.getMessage());
+			       }
+			   }
+			  }	
+			  
 		public void showStatus(HeaterStatusRequest request, StreamObserver<HeaterStatusResponse> rStreamObserver) {
 			for(HeatingDevice.proto.h.Heater heater : Heat.getInstance()) {
 				if(heater.getHeaterId() == request.getHeaterId()) {

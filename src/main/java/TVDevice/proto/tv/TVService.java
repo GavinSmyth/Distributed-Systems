@@ -1,9 +1,14 @@
 package TVDevice.proto.tv;
 
 import java.io.IOException;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.logging.Logger;
 
+import javax.jmdns.JmDNS;
+import javax.jmdns.ServiceEvent;
+import javax.jmdns.ServiceListener;
 
 import TVDevice.proto.tv.TVServiceGrpc.TVServiceImplBase;
 import io.grpc.Server;
@@ -13,52 +18,64 @@ import io.grpc.stub.StreamObserver;
 public class TVService extends TVServiceImplBase{
 	
 	private static final Logger logger = Logger.getLogger(TVService.class.getName());
- private Server server;
-	 
-	 private void start() throws IOException {
-		    /* The port on which the server should run */
-		    int port = 3000;
-		    
-		    server = ServerBuilder.forPort(port)
-		        .addService(new TVService())
-		        .build()
-		        .start();
-		    
-		    logger.info("Server started, listening on " + port);
-		    
-		    Runtime.getRuntime().addShutdownHook(new Thread() {
-		      @Override
-		      public void run() {
-		        System.err.println("*** shutting down gRPC server since JVM is shutting down");
-		        TVService.this.stop();
-		        System.err.println("*** server shut down");
-		      }
-		    });
-		  }
+	 private static class SampleListener implements ServiceListener {
+	       public void serviceAdded(ServiceEvent event) {
+	           System.out.println( event.getInfo().getPort());
 
-		  private void stop() {
-		    if (server != null) {
-		      server.shutdown();
-		    }
-		  }
+	       }
 
-		  /**
-		   * Await termination on the main thread since the grpc library uses daemon threads.
-		   */
-		  private void blockUntilShutdown() throws InterruptedException {
-		    if (server != null) {
-		      server.awaitTermination();
-		    }
-		  }
 
-		  /**
-		   * Main launches the server from the command line.
-		   */
-		  public static void main(String[] args) throws IOException, InterruptedException {
-		    final TVService server = new TVService();
-		    server.start();
-		    server.blockUntilShutdown();
-		  }	
+	       public void serviceRemoved(ServiceEvent event) {
+	           System.out.println("resolved " +event.getInfo());
+	       }
+
+
+	       public void serviceResolved(ServiceEvent event) {
+	           System.out.println("resolved: " + event.getInfo());
+	         
+	      try {
+	    	  TVService tvService = new TVService();
+	     
+	       int port = event.getInfo().getPort();
+	       
+
+	    // portNumber= 50055;
+	       Server server = ServerBuilder.forPort(port)
+	           .addService(tvService)
+	           .build()
+	           .start();
+
+	       logger.info("Lighting Server started, listening on " + port);
+	     
+
+	       server.awaitTermination();
+	   
+	} catch (IOException e) {
+	// TODO Auto-generated catch block
+	e.printStackTrace();
+	} catch (InterruptedException e) {
+	// TODO Auto-generated catch block
+	e.printStackTrace();
+	}
+	}
+	       public static void main(String[] args) throws IOException, InterruptedException {
+				  try {
+			           // Create a JmDNS instance
+			           JmDNS jmdns = JmDNS.create(InetAddress.getLocalHost());
+
+
+			           // Add a service listener
+			           jmdns.addServiceListener("_http._tcp.local.", new SampleListener());
+			           System.out.println("Listening");
+			           // Wait a bit
+			           Thread.sleep(30000);
+			       } catch (UnknownHostException e) {
+			           System.out.println(e.getMessage());
+			       } catch (IOException e) {
+			           System.out.println(e.getMessage());
+			       }
+			   }
+			  }	
 		  public void showStatus(TVStatusRequest request, StreamObserver<TVStatusResponse> rStreamObserver) {
 				for(TVDevice.proto.tv.TV tele : tvdata.getInstance()) {
 					if(tele.getTvId() == request.getTvId()) {

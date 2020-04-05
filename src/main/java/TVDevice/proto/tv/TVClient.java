@@ -202,7 +202,7 @@ public class TVClient extends JFrame {
 	 }
 	 
 		public void showStatus(int id) {
-			 channel =ManagedChannelBuilder.forAddress("localhost", 3000)
+			 channel =ManagedChannelBuilder.forAddress("localhost", 50055)
 				        // Channels are secure by default (via SSL/TLS). For the example we disable TLS to avoid
 				        // needing certificates.
 				        .usePlaintext()
@@ -224,7 +224,7 @@ public class TVClient extends JFrame {
 			
 		}
 		public void tVOn(int id) {
-			 channel =ManagedChannelBuilder.forAddress("localhost", 3000)
+			 channel =ManagedChannelBuilder.forAddress("localhost", 50055)
 				        // Channels are secure by default (via SSL/TLS). For the example we disable TLS to avoid
 				        // needing certificates.
 				        .usePlaintext()
@@ -246,7 +246,7 @@ public class TVClient extends JFrame {
 			
 		}
 		public void tVOff(int id) {
-			 channel =ManagedChannelBuilder.forAddress("localhost", 3000)
+			 channel =ManagedChannelBuilder.forAddress("localhost", 50055)
 				        // Channels are secure by default (via SSL/TLS). For the example we disable TLS to avoid
 				        // needing certificates.
 				        .usePlaintext()
@@ -268,7 +268,7 @@ public class TVClient extends JFrame {
 			
 		}
 		public void setExactVolume(int id, int exact) {
-			 channel =ManagedChannelBuilder.forAddress("localhost", 3000)
+			 channel =ManagedChannelBuilder.forAddress("localhost", 50055)
 				        // Channels are secure by default (via SSL/TLS). For the example we disable TLS to avoid
 				        // needing certificates.
 				        .usePlaintext()
