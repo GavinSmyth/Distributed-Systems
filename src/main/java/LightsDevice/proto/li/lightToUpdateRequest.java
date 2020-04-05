@@ -17,7 +17,6 @@ private static final long serialVersionUID = 0L;
   }
   private lightToUpdateRequest() {
     lightId_ = 0;
-    request_ = "";
   }
 
   @java.lang.Override
@@ -47,12 +46,6 @@ private static final long serialVersionUID = 0L;
           case 8: {
 
             lightId_ = input.readInt32();
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            request_ = s;
             break;
           }
           default: {
@@ -96,40 +89,6 @@ private static final long serialVersionUID = 0L;
     return lightId_;
   }
 
-  public static final int REQUEST_FIELD_NUMBER = 2;
-  private volatile java.lang.Object request_;
-  /**
-   * <code>string request = 2;</code>
-   */
-  public java.lang.String getRequest() {
-    java.lang.Object ref = request_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      request_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string request = 2;</code>
-   */
-  public com.google.protobuf.ByteString
-      getRequestBytes() {
-    java.lang.Object ref = request_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      request_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -147,9 +106,6 @@ private static final long serialVersionUID = 0L;
     if (lightId_ != 0) {
       output.writeInt32(1, lightId_);
     }
-    if (!getRequestBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, request_);
-    }
     unknownFields.writeTo(output);
   }
 
@@ -162,9 +118,6 @@ private static final long serialVersionUID = 0L;
     if (lightId_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(1, lightId_);
-    }
-    if (!getRequestBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, request_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -184,8 +137,6 @@ private static final long serialVersionUID = 0L;
     boolean result = true;
     result = result && (getLightId()
         == other.getLightId());
-    result = result && getRequest()
-        .equals(other.getRequest());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -199,8 +150,6 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + LIGHT_ID_FIELD_NUMBER;
     hash = (53 * hash) + getLightId();
-    hash = (37 * hash) + REQUEST_FIELD_NUMBER;
-    hash = (53 * hash) + getRequest().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -336,8 +285,6 @@ private static final long serialVersionUID = 0L;
       super.clear();
       lightId_ = 0;
 
-      request_ = "";
-
       return this;
     }
 
@@ -365,7 +312,6 @@ private static final long serialVersionUID = 0L;
     public LightsDevice.proto.li.lightToUpdateRequest buildPartial() {
       LightsDevice.proto.li.lightToUpdateRequest result = new LightsDevice.proto.li.lightToUpdateRequest(this);
       result.lightId_ = lightId_;
-      result.request_ = request_;
       onBuilt();
       return result;
     }
@@ -416,10 +362,6 @@ private static final long serialVersionUID = 0L;
       if (other == LightsDevice.proto.li.lightToUpdateRequest.getDefaultInstance()) return this;
       if (other.getLightId() != 0) {
         setLightId(other.getLightId());
-      }
-      if (!other.getRequest().isEmpty()) {
-        request_ = other.request_;
-        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -472,75 +414,6 @@ private static final long serialVersionUID = 0L;
     public Builder clearLightId() {
       
       lightId_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object request_ = "";
-    /**
-     * <code>string request = 2;</code>
-     */
-    public java.lang.String getRequest() {
-      java.lang.Object ref = request_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        request_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string request = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getRequestBytes() {
-      java.lang.Object ref = request_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        request_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string request = 2;</code>
-     */
-    public Builder setRequest(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      request_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string request = 2;</code>
-     */
-    public Builder clearRequest() {
-      
-      request_ = getDefaultInstance().getRequest();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string request = 2;</code>
-     */
-    public Builder setRequestBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      request_ = value;
       onChanged();
       return this;
     }

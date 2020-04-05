@@ -51,20 +51,19 @@ public final class ClassName {
       "\n\022LightsDevice.proto\022\014LightsDevice\"H\n\006Li" +
       "ghts\022\020\n\010light_id\030\001 \001(\005\022\026\n\016light_location" +
       "\030\002 \001(\t\022\024\n\014light_status\030\003 \001(\t\"(\n\024light_st" +
-      "atus_request\022\020\n\010light_id\030\001 \001(\005\"9\n\024lightT" +
-      "oUpdateRequest\022\020\n\010light_id\030\001 \001(\005\022\017\n\007requ" +
-      "est\030\002 \001(\t\";\n\023lightStatusResponse\022$\n\006ligh" +
-      "ts\030\001 \001(\0132\024.LightsDevice.Lights\";\n\023lightD" +
-      "etailResponse\022$\n\006lights\030\001 \001(\0132\024.LightsDe" +
-      "vice.Lights2\221\002\n\rLightsService\022U\n\nShowSta" +
-      "tus\022\".LightsDevice.light_status_request\032" +
-      "!.LightsDevice.lightStatusResponse\"\000\022S\n\010" +
-      "LightsOn\022\".LightsDevice.lightToUpdateReq" +
-      "uest\032!.LightsDevice.lightDetailResponse\"" +
-      "\000\022T\n\tLightsOff\022\".LightsDevice.lightToUpd" +
-      "ateRequest\032!.LightsDevice.lightDetailRes" +
-      "ponse\"\000B$\n\025LightsDevice.proto.liB\tClassN" +
-      "ameP\001b\006proto3"
+      "atus_request\022\020\n\010light_id\030\001 \001(\005\"(\n\024lightT" +
+      "oUpdateRequest\022\020\n\010light_id\030\001 \001(\005\";\n\023ligh" +
+      "tStatusResponse\022$\n\006lights\030\001 \001(\0132\024.Lights" +
+      "Device.Lights\";\n\023lightDetailResponse\022$\n\006" +
+      "lights\030\001 \001(\0132\024.LightsDevice.Lights2\221\002\n\rL" +
+      "ightsService\022U\n\nshowStatus\022\".LightsDevic" +
+      "e.light_status_request\032!.LightsDevice.li" +
+      "ghtStatusResponse\"\000\022S\n\010lightsOn\022\".Lights" +
+      "Device.lightToUpdateRequest\032!.LightsDevi" +
+      "ce.lightDetailResponse\"\000\022T\n\tlightsOff\022\"." +
+      "LightsDevice.lightToUpdateRequest\032!.Ligh" +
+      "tsDevice.lightDetailResponse\"\000B$\n\025Lights" +
+      "Device.proto.liB\tClassNameP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -95,7 +94,7 @@ public final class ClassName {
     internal_static_LightsDevice_lightToUpdateRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_LightsDevice_lightToUpdateRequest_descriptor,
-        new java.lang.String[] { "LightId", "Request", });
+        new java.lang.String[] { "LightId", });
     internal_static_LightsDevice_lightStatusResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_LightsDevice_lightStatusResponse_fieldAccessorTable = new

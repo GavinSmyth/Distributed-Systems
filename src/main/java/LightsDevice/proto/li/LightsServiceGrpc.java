@@ -31,7 +31,7 @@ public final class LightsServiceGrpc {
       LightsDevice.proto.li.lightStatusResponse> getShowStatusMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "ShowStatus",
+      fullMethodName = SERVICE_NAME + '/' + "showStatus",
       requestType = LightsDevice.proto.li.light_status_request.class,
       responseType = LightsDevice.proto.li.lightStatusResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
@@ -45,13 +45,13 @@ public final class LightsServiceGrpc {
               io.grpc.MethodDescriptor.<LightsDevice.proto.li.light_status_request, LightsDevice.proto.li.lightStatusResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
-                  "LightsDevice.LightsService", "ShowStatus"))
+                  "LightsDevice.LightsService", "showStatus"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   LightsDevice.proto.li.light_status_request.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   LightsDevice.proto.li.lightStatusResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new LightsServiceMethodDescriptorSupplier("ShowStatus"))
+                  .setSchemaDescriptor(new LightsServiceMethodDescriptorSupplier("showStatus"))
                   .build();
           }
         }
@@ -63,7 +63,7 @@ public final class LightsServiceGrpc {
       LightsDevice.proto.li.lightDetailResponse> getLightsOnMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "LightsOn",
+      fullMethodName = SERVICE_NAME + '/' + "lightsOn",
       requestType = LightsDevice.proto.li.lightToUpdateRequest.class,
       responseType = LightsDevice.proto.li.lightDetailResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
@@ -77,13 +77,13 @@ public final class LightsServiceGrpc {
               io.grpc.MethodDescriptor.<LightsDevice.proto.li.lightToUpdateRequest, LightsDevice.proto.li.lightDetailResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
-                  "LightsDevice.LightsService", "LightsOn"))
+                  "LightsDevice.LightsService", "lightsOn"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   LightsDevice.proto.li.lightToUpdateRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   LightsDevice.proto.li.lightDetailResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new LightsServiceMethodDescriptorSupplier("LightsOn"))
+                  .setSchemaDescriptor(new LightsServiceMethodDescriptorSupplier("lightsOn"))
                   .build();
           }
         }
@@ -95,7 +95,7 @@ public final class LightsServiceGrpc {
       LightsDevice.proto.li.lightDetailResponse> getLightsOffMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "LightsOff",
+      fullMethodName = SERVICE_NAME + '/' + "lightsOff",
       requestType = LightsDevice.proto.li.lightToUpdateRequest.class,
       responseType = LightsDevice.proto.li.lightDetailResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
@@ -109,13 +109,13 @@ public final class LightsServiceGrpc {
               io.grpc.MethodDescriptor.<LightsDevice.proto.li.lightToUpdateRequest, LightsDevice.proto.li.lightDetailResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
-                  "LightsDevice.LightsService", "LightsOff"))
+                  "LightsDevice.LightsService", "lightsOff"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   LightsDevice.proto.li.lightToUpdateRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   LightsDevice.proto.li.lightDetailResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new LightsServiceMethodDescriptorSupplier("LightsOff"))
+                  .setSchemaDescriptor(new LightsServiceMethodDescriptorSupplier("lightsOff"))
                   .build();
           }
         }

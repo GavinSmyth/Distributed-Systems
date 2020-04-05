@@ -19,39 +19,39 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler (version 1.15.0)",
-    comments = "Source: TVDevice.proto")
-public final class HeaterServiceGrpc {
+    comments = "Source: Tv.proto")
+public final class TVServiceGrpc {
 
-  private HeaterServiceGrpc() {}
+  private TVServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "TVDevice.HeaterService";
+  public static final String SERVICE_NAME = "Tv.TVService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<TVDevice.proto.tv.TVStatusRequest,
       TVDevice.proto.tv.TVStatusResponse> getShowStatusMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "ShowStatus",
+      fullMethodName = SERVICE_NAME + '/' + "showStatus",
       requestType = TVDevice.proto.tv.TVStatusRequest.class,
       responseType = TVDevice.proto.tv.TVStatusResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<TVDevice.proto.tv.TVStatusRequest,
       TVDevice.proto.tv.TVStatusResponse> getShowStatusMethod() {
     io.grpc.MethodDescriptor<TVDevice.proto.tv.TVStatusRequest, TVDevice.proto.tv.TVStatusResponse> getShowStatusMethod;
-    if ((getShowStatusMethod = HeaterServiceGrpc.getShowStatusMethod) == null) {
-      synchronized (HeaterServiceGrpc.class) {
-        if ((getShowStatusMethod = HeaterServiceGrpc.getShowStatusMethod) == null) {
-          HeaterServiceGrpc.getShowStatusMethod = getShowStatusMethod = 
+    if ((getShowStatusMethod = TVServiceGrpc.getShowStatusMethod) == null) {
+      synchronized (TVServiceGrpc.class) {
+        if ((getShowStatusMethod = TVServiceGrpc.getShowStatusMethod) == null) {
+          TVServiceGrpc.getShowStatusMethod = getShowStatusMethod = 
               io.grpc.MethodDescriptor.<TVDevice.proto.tv.TVStatusRequest, TVDevice.proto.tv.TVStatusResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
-                  "TVDevice.HeaterService", "ShowStatus"))
+                  "Tv.TVService", "showStatus"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   TVDevice.proto.tv.TVStatusRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   TVDevice.proto.tv.TVStatusResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new HeaterServiceMethodDescriptorSupplier("ShowStatus"))
+                  .setSchemaDescriptor(new TVServiceMethodDescriptorSupplier("showStatus"))
                   .build();
           }
         }
@@ -63,27 +63,27 @@ public final class HeaterServiceGrpc {
       TVDevice.proto.tv.TVDetailResponse> getSetExactVolumeMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "SetExactVolume",
+      fullMethodName = SERVICE_NAME + '/' + "setExactVolume",
       requestType = TVDevice.proto.tv.exact_update.class,
       responseType = TVDevice.proto.tv.TVDetailResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<TVDevice.proto.tv.exact_update,
       TVDevice.proto.tv.TVDetailResponse> getSetExactVolumeMethod() {
     io.grpc.MethodDescriptor<TVDevice.proto.tv.exact_update, TVDevice.proto.tv.TVDetailResponse> getSetExactVolumeMethod;
-    if ((getSetExactVolumeMethod = HeaterServiceGrpc.getSetExactVolumeMethod) == null) {
-      synchronized (HeaterServiceGrpc.class) {
-        if ((getSetExactVolumeMethod = HeaterServiceGrpc.getSetExactVolumeMethod) == null) {
-          HeaterServiceGrpc.getSetExactVolumeMethod = getSetExactVolumeMethod = 
+    if ((getSetExactVolumeMethod = TVServiceGrpc.getSetExactVolumeMethod) == null) {
+      synchronized (TVServiceGrpc.class) {
+        if ((getSetExactVolumeMethod = TVServiceGrpc.getSetExactVolumeMethod) == null) {
+          TVServiceGrpc.getSetExactVolumeMethod = getSetExactVolumeMethod = 
               io.grpc.MethodDescriptor.<TVDevice.proto.tv.exact_update, TVDevice.proto.tv.TVDetailResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
-                  "TVDevice.HeaterService", "SetExactVolume"))
+                  "Tv.TVService", "setExactVolume"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   TVDevice.proto.tv.exact_update.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   TVDevice.proto.tv.TVDetailResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new HeaterServiceMethodDescriptorSupplier("SetExactVolume"))
+                  .setSchemaDescriptor(new TVServiceMethodDescriptorSupplier("setExactVolume"))
                   .build();
           }
         }
@@ -95,27 +95,27 @@ public final class HeaterServiceGrpc {
       TVDevice.proto.tv.TVDetailResponse> getTVOnMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "TVOn",
+      fullMethodName = SERVICE_NAME + '/' + "tVOn",
       requestType = TVDevice.proto.tv.update_request.class,
       responseType = TVDevice.proto.tv.TVDetailResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<TVDevice.proto.tv.update_request,
       TVDevice.proto.tv.TVDetailResponse> getTVOnMethod() {
     io.grpc.MethodDescriptor<TVDevice.proto.tv.update_request, TVDevice.proto.tv.TVDetailResponse> getTVOnMethod;
-    if ((getTVOnMethod = HeaterServiceGrpc.getTVOnMethod) == null) {
-      synchronized (HeaterServiceGrpc.class) {
-        if ((getTVOnMethod = HeaterServiceGrpc.getTVOnMethod) == null) {
-          HeaterServiceGrpc.getTVOnMethod = getTVOnMethod = 
+    if ((getTVOnMethod = TVServiceGrpc.getTVOnMethod) == null) {
+      synchronized (TVServiceGrpc.class) {
+        if ((getTVOnMethod = TVServiceGrpc.getTVOnMethod) == null) {
+          TVServiceGrpc.getTVOnMethod = getTVOnMethod = 
               io.grpc.MethodDescriptor.<TVDevice.proto.tv.update_request, TVDevice.proto.tv.TVDetailResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
-                  "TVDevice.HeaterService", "TVOn"))
+                  "Tv.TVService", "tVOn"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   TVDevice.proto.tv.update_request.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   TVDevice.proto.tv.TVDetailResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new HeaterServiceMethodDescriptorSupplier("TVOn"))
+                  .setSchemaDescriptor(new TVServiceMethodDescriptorSupplier("tVOn"))
                   .build();
           }
         }
@@ -127,27 +127,27 @@ public final class HeaterServiceGrpc {
       TVDevice.proto.tv.TVDetailResponse> getTVOffMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "TVOff",
+      fullMethodName = SERVICE_NAME + '/' + "tVOff",
       requestType = TVDevice.proto.tv.update_request.class,
       responseType = TVDevice.proto.tv.TVDetailResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<TVDevice.proto.tv.update_request,
       TVDevice.proto.tv.TVDetailResponse> getTVOffMethod() {
     io.grpc.MethodDescriptor<TVDevice.proto.tv.update_request, TVDevice.proto.tv.TVDetailResponse> getTVOffMethod;
-    if ((getTVOffMethod = HeaterServiceGrpc.getTVOffMethod) == null) {
-      synchronized (HeaterServiceGrpc.class) {
-        if ((getTVOffMethod = HeaterServiceGrpc.getTVOffMethod) == null) {
-          HeaterServiceGrpc.getTVOffMethod = getTVOffMethod = 
+    if ((getTVOffMethod = TVServiceGrpc.getTVOffMethod) == null) {
+      synchronized (TVServiceGrpc.class) {
+        if ((getTVOffMethod = TVServiceGrpc.getTVOffMethod) == null) {
+          TVServiceGrpc.getTVOffMethod = getTVOffMethod = 
               io.grpc.MethodDescriptor.<TVDevice.proto.tv.update_request, TVDevice.proto.tv.TVDetailResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
-                  "TVDevice.HeaterService", "TVOff"))
+                  "Tv.TVService", "tVOff"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   TVDevice.proto.tv.update_request.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   TVDevice.proto.tv.TVDetailResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new HeaterServiceMethodDescriptorSupplier("TVOff"))
+                  .setSchemaDescriptor(new TVServiceMethodDescriptorSupplier("tVOff"))
                   .build();
           }
         }
@@ -158,29 +158,29 @@ public final class HeaterServiceGrpc {
   /**
    * Creates a new async stub that supports all call types for the service
    */
-  public static HeaterServiceStub newStub(io.grpc.Channel channel) {
-    return new HeaterServiceStub(channel);
+  public static TVServiceStub newStub(io.grpc.Channel channel) {
+    return new TVServiceStub(channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
-  public static HeaterServiceBlockingStub newBlockingStub(
+  public static TVServiceBlockingStub newBlockingStub(
       io.grpc.Channel channel) {
-    return new HeaterServiceBlockingStub(channel);
+    return new TVServiceBlockingStub(channel);
   }
 
   /**
    * Creates a new ListenableFuture-style stub that supports unary calls on the service
    */
-  public static HeaterServiceFutureStub newFutureStub(
+  public static TVServiceFutureStub newFutureStub(
       io.grpc.Channel channel) {
-    return new HeaterServiceFutureStub(channel);
+    return new TVServiceFutureStub(channel);
   }
 
   /**
    */
-  public static abstract class HeaterServiceImplBase implements io.grpc.BindableService {
+  public static abstract class TVServiceImplBase implements io.grpc.BindableService {
 
     /**
      */
@@ -232,34 +232,34 @@ public final class HeaterServiceGrpc {
               new MethodHandlers<
                 TVDevice.proto.tv.update_request,
                 TVDevice.proto.tv.TVDetailResponse>(
-                  this, METHODID_TVON)))
+                  this, METHODID_T_VON)))
           .addMethod(
             getTVOffMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 TVDevice.proto.tv.update_request,
                 TVDevice.proto.tv.TVDetailResponse>(
-                  this, METHODID_TVOFF)))
+                  this, METHODID_T_VOFF)))
           .build();
     }
   }
 
   /**
    */
-  public static final class HeaterServiceStub extends io.grpc.stub.AbstractStub<HeaterServiceStub> {
-    private HeaterServiceStub(io.grpc.Channel channel) {
+  public static final class TVServiceStub extends io.grpc.stub.AbstractStub<TVServiceStub> {
+    private TVServiceStub(io.grpc.Channel channel) {
       super(channel);
     }
 
-    private HeaterServiceStub(io.grpc.Channel channel,
+    private TVServiceStub(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected HeaterServiceStub build(io.grpc.Channel channel,
+    protected TVServiceStub build(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
-      return new HeaterServiceStub(channel, callOptions);
+      return new TVServiceStub(channel, callOptions);
     }
 
     /**
@@ -297,20 +297,20 @@ public final class HeaterServiceGrpc {
 
   /**
    */
-  public static final class HeaterServiceBlockingStub extends io.grpc.stub.AbstractStub<HeaterServiceBlockingStub> {
-    private HeaterServiceBlockingStub(io.grpc.Channel channel) {
+  public static final class TVServiceBlockingStub extends io.grpc.stub.AbstractStub<TVServiceBlockingStub> {
+    private TVServiceBlockingStub(io.grpc.Channel channel) {
       super(channel);
     }
 
-    private HeaterServiceBlockingStub(io.grpc.Channel channel,
+    private TVServiceBlockingStub(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected HeaterServiceBlockingStub build(io.grpc.Channel channel,
+    protected TVServiceBlockingStub build(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
-      return new HeaterServiceBlockingStub(channel, callOptions);
+      return new TVServiceBlockingStub(channel, callOptions);
     }
 
     /**
@@ -344,20 +344,20 @@ public final class HeaterServiceGrpc {
 
   /**
    */
-  public static final class HeaterServiceFutureStub extends io.grpc.stub.AbstractStub<HeaterServiceFutureStub> {
-    private HeaterServiceFutureStub(io.grpc.Channel channel) {
+  public static final class TVServiceFutureStub extends io.grpc.stub.AbstractStub<TVServiceFutureStub> {
+    private TVServiceFutureStub(io.grpc.Channel channel) {
       super(channel);
     }
 
-    private HeaterServiceFutureStub(io.grpc.Channel channel,
+    private TVServiceFutureStub(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected HeaterServiceFutureStub build(io.grpc.Channel channel,
+    protected TVServiceFutureStub build(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
-      return new HeaterServiceFutureStub(channel, callOptions);
+      return new TVServiceFutureStub(channel, callOptions);
     }
 
     /**
@@ -395,18 +395,18 @@ public final class HeaterServiceGrpc {
 
   private static final int METHODID_SHOW_STATUS = 0;
   private static final int METHODID_SET_EXACT_VOLUME = 1;
-  private static final int METHODID_TVON = 2;
-  private static final int METHODID_TVOFF = 3;
+  private static final int METHODID_T_VON = 2;
+  private static final int METHODID_T_VOFF = 3;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final HeaterServiceImplBase serviceImpl;
+    private final TVServiceImplBase serviceImpl;
     private final int methodId;
 
-    MethodHandlers(HeaterServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(TVServiceImplBase serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -423,11 +423,11 @@ public final class HeaterServiceGrpc {
           serviceImpl.setExactVolume((TVDevice.proto.tv.exact_update) request,
               (io.grpc.stub.StreamObserver<TVDevice.proto.tv.TVDetailResponse>) responseObserver);
           break;
-        case METHODID_TVON:
+        case METHODID_T_VON:
           serviceImpl.tVOn((TVDevice.proto.tv.update_request) request,
               (io.grpc.stub.StreamObserver<TVDevice.proto.tv.TVDetailResponse>) responseObserver);
           break;
-        case METHODID_TVOFF:
+        case METHODID_T_VOFF:
           serviceImpl.tVOff((TVDevice.proto.tv.update_request) request,
               (io.grpc.stub.StreamObserver<TVDevice.proto.tv.TVDetailResponse>) responseObserver);
           break;
@@ -447,9 +447,9 @@ public final class HeaterServiceGrpc {
     }
   }
 
-  private static abstract class HeaterServiceBaseDescriptorSupplier
+  private static abstract class TVServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoFileDescriptorSupplier, io.grpc.protobuf.ProtoServiceDescriptorSupplier {
-    HeaterServiceBaseDescriptorSupplier() {}
+    TVServiceBaseDescriptorSupplier() {}
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
@@ -458,21 +458,21 @@ public final class HeaterServiceGrpc {
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.ServiceDescriptor getServiceDescriptor() {
-      return getFileDescriptor().findServiceByName("HeaterService");
+      return getFileDescriptor().findServiceByName("TVService");
     }
   }
 
-  private static final class HeaterServiceFileDescriptorSupplier
-      extends HeaterServiceBaseDescriptorSupplier {
-    HeaterServiceFileDescriptorSupplier() {}
+  private static final class TVServiceFileDescriptorSupplier
+      extends TVServiceBaseDescriptorSupplier {
+    TVServiceFileDescriptorSupplier() {}
   }
 
-  private static final class HeaterServiceMethodDescriptorSupplier
-      extends HeaterServiceBaseDescriptorSupplier
+  private static final class TVServiceMethodDescriptorSupplier
+      extends TVServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
     private final String methodName;
 
-    HeaterServiceMethodDescriptorSupplier(String methodName) {
+    TVServiceMethodDescriptorSupplier(String methodName) {
       this.methodName = methodName;
     }
 
@@ -487,11 +487,11 @@ public final class HeaterServiceGrpc {
   public static io.grpc.ServiceDescriptor getServiceDescriptor() {
     io.grpc.ServiceDescriptor result = serviceDescriptor;
     if (result == null) {
-      synchronized (HeaterServiceGrpc.class) {
+      synchronized (TVServiceGrpc.class) {
         result = serviceDescriptor;
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
-              .setSchemaDescriptor(new HeaterServiceFileDescriptorSupplier())
+              .setSchemaDescriptor(new TVServiceFileDescriptorSupplier())
               .addMethod(getShowStatusMethod())
               .addMethod(getSetExactVolumeMethod())
               .addMethod(getTVOnMethod())

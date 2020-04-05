@@ -11,14 +11,4 @@ public interface lightToUpdateRequestOrBuilder extends
    * <code>int32 light_id = 1;</code>
    */
   int getLightId();
-
-  /**
-   * <code>string request = 2;</code>
-   */
-  java.lang.String getRequest();
-  /**
-   * <code>string request = 2;</code>
-   */
-  com.google.protobuf.ByteString
-      getRequestBytes();
 }

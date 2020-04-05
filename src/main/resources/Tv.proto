@@ -1,22 +1,23 @@
 syntax = "proto3";
 
-package TVDevice;
+package Tv;
 
 option java_package = "TVDevice.proto.tv";
 option java_multiple_files = true;
 option java_outer_classname = "ClassName";
 
-service HeaterService{
-rpc ShowStatus(TVStatusRequest) returns (TVStatusResponse) {};
-rpc SetExactVolume(exact_update) returns (TVDetailResponse) {};
-rpc TVOn(update_request) returns (TVDetailResponse ) {};
-rpc TVOff(update_request) returns (TVDetailResponse ) {};
+service TVService{
+rpc showStatus(TVStatusRequest) returns (TVStatusResponse) {};
+rpc setExactVolume(exact_update) returns (TVDetailResponse) {};
+rpc tVOn(update_request) returns (TVDetailResponse ) {};
+rpc tVOff(update_request) returns (TVDetailResponse ) {};
 }
 
 message TV{
  int32 tv_id = 1;
- string device_location = 3;
- string status = 4;
+ string device_location = 2;
+ string status = 3;
+ int32 exact = 4;
 
 }
 
@@ -30,7 +31,7 @@ int32 exact_request = 2;
 
 message update_request{
  int32 tv_id = 1;
-string update =2;
+
 }
 
 message TVStatusResponse {

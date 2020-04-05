@@ -16,6 +16,9 @@ import HeatingDevice.proto.h.HeaterServiceGrpc;
 
 
 import HeatingDevice.proto.h.HeaterServiceGrpc.HeaterServiceImplBase;
+import TVDevice.proto.tv.TVDetailResponse;
+import TVDevice.proto.tv.exact_update;
+import TVDevice.proto.tv.tvdata;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import io.grpc.stub.StreamObserver;
@@ -147,25 +150,28 @@ public class HeaterService extends HeaterServiceImplBase{
 	            return;
 	        }
 	    }
-		public void setExactTemp(exact_temp rExact_temp, StreamObserver<HeaterDetailResponse> rStreamObserver) {
-			ArrayList<HeatingDevice.proto.h.Heater> heatList = Heat.getInstance();
-			int exact = rExact_temp.getExactTemp();
-			System.out.println(exact);
-			for(int i=0; i<heatList.size(); i++) {
-				if(heatList.get(i).getHeaterId() == rExact_temp.getHeaterId()) {
-					HeatingDevice.proto.h.Heater heater_rec = (HeatingDevice.proto.h.Heater) heatList.get(i);
-        			Heat.heat.clear();
-        			Heat.heat.add(HeatingDevice.proto.h.Heater.newBuilder().setHeaterId(heater_rec.getHeaterId()).setDevice(heater_rec.getDevice()).setDeviceLocation(heater_rec.getDeviceLocation()).setStatus(heater_rec.getStatus()).setExactTemp(exact).build());					
-				}
-				for(HeatingDevice.proto.h.Heater heater : Heat.heat) {
-		        	HeaterDetailResponse response = HeaterDetailResponse.newBuilder().setHeater(heater).build();
+		
+		public void setExactTemp(exact_temp requestExact_update, StreamObserver<HeaterDetailResponse> rStreamObserver) {
+	    	ArrayList<HeatingDevice.proto.h.Heater> heatList = Heat.getInstance();
+	    	 for(int i=0; i<heatList.size(); i++) {
+	    		 if(heatList.get(i).getHeaterId() == requestExact_update.getHeaterId()) {	
+	    			 HeatingDevice.proto.h.Heater heater_rec = (HeatingDevice.proto.h.Heater) heatList.get(i);
+	    			 Heat.heat.clear();
+	    			 int exact = requestExact_update.getExactTemp();
+	        			Heat.heat.add(HeatingDevice.proto.h.Heater.newBuilder().setHeaterId(heater_rec.getHeaterId()).setDevice(heater_rec.getDevice()).setDeviceLocation(heater_rec.getDeviceLocation()).setStatus(heater_rec.getStatus()).setExactTemp(exact).build());					
+
+	    		 }
+	    		 
+	    		 
+	    	 }
+	    	 for(HeatingDevice.proto.h.Heater heater : Heat.heat) {
+	    		 HeaterDetailResponse response = HeaterDetailResponse.newBuilder().setHeater(heater).build();
 		        	rStreamObserver.onNext(response);
 		        	rStreamObserver.onCompleted();
 		            return;
 		        }
-				
-				
-			}
+
+			
 		}
 
 }
